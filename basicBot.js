@@ -196,7 +196,7 @@
             maximumAfk: 120,
             afkRemoval: true,
             maximumDc: 60,
-            bouncerPlus: true,
+            bouncerPlus: false,
             lockdownEnabled: false,
             lockGuard: false,
             maximumLocktime: 10,
@@ -394,7 +394,7 @@
                 if (typeof obj === "object") u = obj;
                 else u = API.getUser(obj);
                 if (botCreatorIDs.indexOf(u.id) > -1) return 10;
-                if (u.gRole < 2) return u.role;
+                if (u.gRole < 0) return u.role;
                 else {
                     switch (u.gRole) {
                         case 2:
